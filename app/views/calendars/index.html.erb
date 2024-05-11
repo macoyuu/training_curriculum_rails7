@@ -5,7 +5,7 @@
     <%= f.text_field :plan, class: 'text-input' %>
     <%= f.submit '保存' %>
   <% end %>
-  
+
 <div class='calendar'>
   <% @week_days.each do |day| %>
     <div class='item'>
@@ -13,9 +13,10 @@
           <% day[:month] %>/<% day[:date] %>
         </div>
       <ul class='content'>
-        <% day[:plans].each do |plan| %>
+        <% if day[:plans].length != 0 %>
           <li class='plan-list'>・<%= plan %></li>
         <% end %>
+      <% end %>
       </ul>
     </div>
   <% end %>
